@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Team Solutions Pvt. Ltd.</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f6faf7;
+      min-height: 100vh;
+      color: #1a2b2e;
+    }
+    .main-header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: box-shadow 0.2s;
+    }
+    .main-header.sticky {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px 10px 32px;
+    }
+    .logo {
+      width: 80px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      background: #f6faf7;
+    }
+    .main-nav {
+      flex: 1;
+      text-align: center;
+    }
+    .main-nav a {
+      color: #1a2b2e;
+      text-decoration: none;
+      margin: 0 22px;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 6px 16px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a:hover, .main-nav a:focus {
+      background: #e0f7e9;
+      color: #007a3d;
+      outline: none;
+    }
+    .header-contact {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #007a3d;
+      background: #e0f7e9;
+      padding: 8px 16px;
+      border-radius: 8px;
+      min-width: 150px;
+      text-align: right;
+    }
+    .hero {
+      background: linear-gradient(120deg, #e0f7e9 60%, #b3e6c7 100%);
+      padding: 60px 0 48px 0;
+      text-align: center;
+      margin-bottom: 0;
+      box-shadow: 0 8px 32px rgba(0, 122, 61, 0.07);
+      animation: heroFadeIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: none; }
+    }
+    .hero-content h1 {
+      font-size: 2.8em;
+      color: #007a3d;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .hero-content p {
+      font-size: 1.3em;
+      color: #1a2b2e;
+      margin-bottom: 24px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #007a3d;
+      color: #fff;
+      font-size: 1.1em;
+      padding: 12px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover, .cta-btn:focus {
+      background: #005f2e;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+      transform: translateY(-2px) scale(1.04);
+      outline: none;
+    }
+    #services {
+      padding: 64px 20px 48px 20px;
+      background: #f6faf7;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #services h2 {
+      color: #007a3d;
+      font-size: 2em;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 40px;
+      margin-top: 0;
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid #e0e6f0;
+      padding: 36px 28px 28px 28px;
+      border-radius: 22px;
+      box-shadow: 0 4px 18px rgba(0, 122, 61, 0.07);
+      transition: transform 0.18s, box-shadow 0.18s;
+      position: relative;
+      overflow: hidden;
+      min-height: 220px;
+    }
+    .service-card:hover, .service-card:focus-within {
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 12px 36px rgba(0, 122, 61, 0.15);
+      border-color: #b3e6c7;
+      outline: none;
+    }
+    .service-card h3 {
+      margin-top: 0;
+      color: #007a3d;
+      font-size: 1.22em;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+    .service-card ul {
+      list-style-type: disc;
+      padding-left: 22px;
+      color: #222;
+      font-size: 1.08em;
+      margin-bottom: 0;
+    }
+    .service-card li {
+      margin-bottom: 8px;
+    }
+    section#about {
+      padding: 56px 20px 40px 20px;
+      background: #fff;
+      border-radius: 22px;
+      margin: 48px auto 0 auto;
+      max-width: 900px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    section#about h2 {
+      color: #007a3d;
+      margin-top: 0;
+      margin-bottom: 18px;
+      font-size: 2em;
+    }
+    section#about p {
+      color: #222;
+      font-size: 1.13em;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .contact-section {
+      background: #e0f7e9;
+      padding: 56px 20px 44px 20px;
+      border-radius: 22px;
+      max-width: 700px;
+      margin: 48px auto 0 auto;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .contact-section h2 {
+      color: #007a3d;
+      margin-bottom: 24px;
+      font-size: 2em;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .input-group {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid #b3e6c7;
+      padding: 0 10px;
+      transition: border 0.2s;
+    }
+    .input-group:focus-within {
+      border: 1.5px solid #007a3d;
+    }
+    .input-group span {
+      font-size: 1.2em;
+      margin-right: 8px;
+      color: #007a3d;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 12px 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      font-family: inherit;
+      resize: none;
+      background: transparent;
+      width: 100%;
+      outline: none;
+    }
+    .contact-form textarea {
+      min-height: 90px;
+    }
+    .contact-form button {
+      background: #007a3d;
+      color: #fff;
+      font-size: 1.1em;
+      padding: 12px 0;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .contact-form button:hover, .contact-form button:focus {
+      background: #005f2e;
+      transform: translateY(-2px) scale(1.04);
+      outline: none;
+    }
+    footer {
+      background: #007a3d;
+      color: white;
+      text-align: center;
+      padding: 18px 0 12px 0;
+      font-size: 1.1em;
+      letter-spacing: 0.5px;
+      margin-top: 40px;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.07);
+    }
+    /* Animation classes for scroll */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: none;
+    }
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px 10px 10px 10px;
+      }
+      .main-nav {
+        margin: 10px 0;
+      }
+    }
+    @media (max-width: 700px) {
+      .services-container {
+        grid-template-columns: 1fr;
+      }
+      section#about, .contact-section {
+        margin: 18px 0 0 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      .header-inner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 4px 8px 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header class="main-header">
+      <div class="header-inner">
+        <img src="logo.jpeg" alt="Team Solutions Logo" class="logo">
+        <nav class="main-nav">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-contact">
+          <p>📍 Cochin</p>
+          <p>📞 9188505143 | 9656148992</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero animate-on-scroll">
+      <div class="hero-content">
+        <h1>Team Solutions Pvt. Ltd.</h1>
+        <p>Your Trusted IT Support Partner</p>
+        <a href="#contact" class="cta-btn">Contact Us</a>
+      </div>
+    </section>
+
+    <section id="services" class="animate-on-scroll">
+      <h2>Our Services</h2>
+      <div class="services-container">
+        <div class="service-card animate-on-scroll">
+          <h3>🖥 Laptop & Desktop Support</h3>
+          <ul>
+            <li>Hardware diagnostics</li>
+            <li>OS installation</li>
+            <li>Software troubleshooting and upgrades</li>
+            <li>Laptop service</li>
+          </ul>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <h3>🛡 Firewall & Antivirus Setup</h3>
+          <ul>
+            <li>Kaspersky antivirus configuration</li>
+            <li>Fortinet firewall setup</li>
+            <li>Security optimization</li>
+          </ul>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <h3>🌐 Network Configuration</h3>
+          <ul>
+            <li>LAN/WAN setup</li>
+            <li>Wireless access point installation</li>
+            <li>Router and firewall configuration</li>
+          </ul>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <h3>🗄 Server Installation & Backup</h3>
+          <ul>
+            <li>Windows/Linux server setup</li>
+            <li>User account management</li>
+            <li>Regular data backup solutions</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="animate-on-scroll">
+      <h2>About Us</h2>
+      <p>Team Solutions Pvt. Ltd. is a Cochin-based IT service provider specializing in end-to-end hardware support, firewall setup, antivirus protection, and server/network management.</p>
+      <p>With a customer-first mindset, we serve both home users and businesses, offering reliable solutions for laptops, desktops, networking, and data backup.</p>
+      <p>Our team brings over 1 year of combined experience in the IT industry, ensuring fast, efficient, and affordable service. Whether it's preventive maintenance or emergency troubleshooting, we’ve got you covered.</p>
+    </section>
+
+    <section id="contact" class="contact-section animate-on-scroll">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <div class="input-group"><span>👤</span><input type="text" name="name" placeholder="Your Name" required></div>
+        <div class="input-group"><span>✉️</span><input type="email" name="email" placeholder="Your Email" required></div>
+        <div class="input-group"><span>💬</span><textarea name="message" placeholder="Your Message" required></textarea></div>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Team Solutions Pvt. Ltd.</p>
+    </footer>
+  </body>
+
+  <script>
+    // Sticky header shadow effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('.main-header');
+      if(window.scrollY > 10) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    });
+
+    // Scroll animation
+    function revealOnScroll() {
+      const elements = document.querySelectorAll('.animate-on-scroll');
+      const windowHeight = window.innerHeight;
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < windowHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</html>
